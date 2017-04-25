@@ -25,7 +25,7 @@
         }
 
         public function delete($id){
-            $sql = "DELETE FROM $this->table WEHRE id = :id";
+            $sql = "DELETE FROM $this->table WHERE id = :id";
             $stm = Conn::prepare($sql);
             $stm->bindParam(":id", $id);
             return $stm->execute();

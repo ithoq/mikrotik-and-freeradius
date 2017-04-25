@@ -21,7 +21,12 @@
         }
 
         public static function prepare($sql){
-            return self::getInstance()->prepare($sql);
+            try {
+                return self::getInstance()->prepare($sql);
+            } catch (PDOException $e) {
+                echo $e->getMessage();
+                return null;
+            }
         }
     }
 

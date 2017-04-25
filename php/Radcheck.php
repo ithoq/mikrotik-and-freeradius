@@ -1,6 +1,6 @@
 <?php
 
-    class Usuario extends Crud{
+    class Radcheck extends Crud{
 
         public $table = 'radcheck';
 
