@@ -29,9 +29,9 @@
       <a href="singin.php"> <button type="button" name="button">Cadastrar usuario</button> </a>
       <section>
           <h2>Conexões por data</h2>
-          <form class="" action="index.html" method="post">
-              <input id="dataInicial" type="date" name="dataInicial" value="" placeholder="00/00/0000">
-              <input id="dataFinal" type="date" name="dataFinal" value="" placeholder="00/00/0000">
+          <form class="" action="connDateUser.php" method="post">
+              <input id="dataInicial" type="text" name="dataInicial" value="" placeholder="0000/00/00">
+              <input id="dataFinal" type="text" name="dataFinal" value="" placeholder="0000/00/00">
              <button type="submit" name="button">Mostrar</button>
           </form>
       </section>

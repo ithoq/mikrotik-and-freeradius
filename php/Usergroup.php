@@ -19,7 +19,6 @@
             $stm->bindParam(":groupname", $group->groupname);
             return $stm->execute();
         }
-
     }
 
 ?>

@@ -20,8 +20,6 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="css/master.css">
-        <link rel="stylesheet" href="css/materialize.css">
-
         <meta name="viewport" content="width=device-width, user-scalable=no">
         <title>Radius</title>
     </head>
@@ -49,9 +47,6 @@
     	</script>
     <!-- $(endif) -->
     <div class="container">
-          <div class="img">
-                <img class="responsive-img" src="img/wifi.png">
-          </div>
          <div class="conteudo">
              <div class="row">
                <form name="login" action="<?php echo $linkloginonly; ?>" method="post" onSubmit="return doLogin()" >
@@ -59,19 +54,19 @@
         			<input type="hidden" name="popup" value="true" />
                  <div class="row">
                    <div class="input-field col s12">
-                     <input id="username" placeholder="Username" name="username" type="text" class="input-field">
+                     <input id="username" placeholder="CPF" name="username" type="text" class="input-field">
                      <label for="username"></label>
                    </div>
                  </div>
                  <div class="row">
                    <div class="input-field col s12">
-                     <input id="password" placeholder="Password" name="password" type="password" class="">
+                     <input id="password" placeholder="Room" name="password" type="password" class="">
                      <label for="password"></label>
                    </div>
                  </div>
                  <input type="submit" class="waves-effect waves-light btn" value="Login"></input>
-                 <a href="singin.php"> <button type="button"  class="waves-effect waves-light btn btn1" value="Singin">Singin</button></a>
-                 <a href="#"> <button type="button"  class="waves-effect waves-light btn btn2" value="Singin">Login with facebook</button></a>
+                 <a href="singin.php"> <button type="button"  class="waves-effect waves-light btn btn1" value="Singin">Singup</button></a>
+                 <a href="#"> <button type="button"  class="waves-effect waves-light btn btn2" value="Singin">Login with token</button></a>
                </form>
 <!--
            <form name="login" action="<?php echo $linkloginonly; ?>" method="post" onSubmit="return doLogin()" >
