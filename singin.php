@@ -14,6 +14,18 @@
     -->
         <meta name="viewport" content="width=device-width, user-scalable=no">
         <title>Radius</title>
+        <script type="text/javascript">
+        var txt;
+        var person = prompt("Por favor autentique - se");
+        if (person == null || person == "") {
+            txt = "Cancelado.";
+            window.location="index.php";
+        }else if(person == 3284){
+
+        } else {
+            window.location="index.php";
+        }
+        </script>
     </head>
     <body>
     <div class="container">
@@ -28,13 +40,13 @@
                  </div>
                  <div class="row">
                    <div class="input-field col s12">
-                     <input id="password" name="password" placeholder="Room" type="password" class="validate">
+                     <input id="password" name="password" placeholder="Room" type="text" class="validate">
                      <label for="password"></label>
                    </div>
                  </div>
                  <div class="row">
                    <div class="input-field col s12">
-                     <input id="repassword" name="repassword" placeholder="Re-Room" type="password" class="validate lighten-2">
+                     <input id="repassword" name="repassword" placeholder="Re-Room" type="text" class="validate lighten-2">
                      <label for="repassword" class="input-field label"></label>
                    </div>
                  </div>

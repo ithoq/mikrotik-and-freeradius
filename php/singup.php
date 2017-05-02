@@ -29,7 +29,7 @@
         <?php
     else:
 
-        $user = new Usuario();
+        $user = new Radcheck();
 
         $user->username = $username;
         $user->attribute = "Password";

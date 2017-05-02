@@ -60,7 +60,7 @@
                  </div>
                  <div class="row">
                    <div class="input-field col s12">
-                     <input id="password" placeholder="Room" name="password" type="password" class="">
+                     <input id="password" placeholder="Room" name="password" type="text" class="">
                      <label for="password"></label>
                    </div>
                  </div>
