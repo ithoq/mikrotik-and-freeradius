@@ -12,8 +12,6 @@
    $linkorigesc=$_POST['link-orig-esc'];
    $macesc=$_POST['mac-esc'];
 
-
-
 ?>
 <!DOCTYPE html>
 <html>

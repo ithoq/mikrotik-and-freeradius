@@ -12,7 +12,7 @@
     if($radcheck->delete($id)){
         echo "Usuario: ".$usuario. " deletado com sucesso!";
         ?>
-            <a href="teste.php">Voltar</a>
+            <a href="administrador.php">Voltar</a>
         <?php
     }else{
         echo "Não foi possivel deletar";

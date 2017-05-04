@@ -5,7 +5,7 @@
         public $table;
 
         abstract function insert();
-        abstract function update($id);
+        abstract function update($cpf);
 
         public function find($id){
 
@@ -24,10 +24,10 @@
             return $stm->fetchAll();
         }
 
-        public function delete($id){
-            $sql = "DELETE FROM $this->table WHERE id = :id";
+        public function delete($cpf){
+            $sql = "DELETE FROM $this->table WHERE username = :username";
             $stm = Conn::prepare($sql);
-            $stm->bindParam(":id", $id);
+            $stm->bindParam(":username", $cpf);
             return $stm->execute();
         }
 

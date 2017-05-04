@@ -7,7 +7,7 @@
         public $attribute;
         public $value;
 
-        public function update($id){}
+        public function update($cpf){}
 
         public function insert(){
 

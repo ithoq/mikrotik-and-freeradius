@@ -26,7 +26,17 @@
             return $stm->execute();
         }
 
-        public function update($id){}
+        public function update($cpf){
+            $sql = "UPDATE $this->table SET username = :username, value = :value,
+            dataNascimento = :dataNascimento WHERE username = :cpf";
+
+            $stm = Conn::prepare($sql);
+            $stm->bindParam(":username", $cpf);
+            $stm->bindParam(":value", $this->value);
+            $stm->bindParam(":dataNascimento", $this->dataNascimento);
+            $stm->bindParam(":cpf", $cpf);
+            return $stm->execute();
+        }
 
         public function findCPF($cpf){
 

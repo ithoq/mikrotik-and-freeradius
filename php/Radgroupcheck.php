@@ -23,7 +23,7 @@
             return $stm->execute();
         }
 
-        public function update($id){}
+        public function update($cpf){}
     }
 
 ?>

@@ -4,7 +4,7 @@
 
         public $table = "usergroup";
 
-        public function update($id){}
+        public function update($cpf){}
 
         public function insert(){
 

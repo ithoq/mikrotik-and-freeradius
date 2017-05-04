@@ -4,7 +4,7 @@
 
         public $table = "radacct";
 
-        public function update($id){}
+        public function update($cpf){}
         public function insert(){}
 
         public function findDateRange($starttime, $stoptime){
