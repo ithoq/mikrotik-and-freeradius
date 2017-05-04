@@ -21,7 +21,7 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="css/master.css">
         <meta name="viewport" content="width=device-width, user-scalable=no">
-        <title>Radius</title>
+        <title>Login Hotspot</title>
     </head>
     <body>
         <!-- $(if chap-id) -->

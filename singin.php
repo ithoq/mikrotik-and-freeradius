@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="css/materialize.css">
     -->
         <meta name="viewport" content="width=device-width, user-scalable=no">
-        <title>Radius</title>
+        <title>Cadastro de clientes</title>
         <script type="text/javascript">
         var txt;
         var person = prompt("Por favor autentique - se");
@@ -48,6 +48,12 @@
                    <div class="input-field col s12">
                      <input id="repassword" name="repassword" placeholder="Re-Room" type="text" class="validate lighten-2">
                      <label for="repassword" class="input-field label"></label>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="input-field col s12">
+                     <input id="dataNascimento" name="dataNascimento" placeholder="data nascimento" type="text" class="validate lighten-2">
+                     <label for="DataNascimento" class="input-field label"></label>
                    </div>
                  </div>
                  <input type="submit"  class="waves-effect waves-light btn btn1" value="Singin"></input>

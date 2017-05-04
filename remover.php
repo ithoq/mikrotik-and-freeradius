@@ -10,7 +10,7 @@
     $usuario = $radcheck->find($id)['username'];
 
     if($radcheck->delete($id)){
-        echo $usuario. " deletado com sucesso!";
+        echo "Usuario: ".$usuario. " deletado com sucesso!";
         ?>
             <a href="teste.php">Voltar</a>
         <?php

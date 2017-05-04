@@ -17,7 +17,6 @@
              $stm->execute();
              return $stm->fetchAll();
         }
-
     }
 
 ?>
