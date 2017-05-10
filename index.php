@@ -1,5 +1,5 @@
 <?php
-
+/*
    $mac=$_POST['mac'];
    $ip=$_POST['ip'];
    $username=$_POST['username'];
@@ -11,7 +11,7 @@
    $linkloginonly=$_POST['link-login-only'];
    $linkorigesc=$_POST['link-orig-esc'];
    $macesc=$_POST['mac-esc'];
-
+*/
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,10 +35,10 @@
     	<script type="text/javascript">
     	<!--
     	    function doLogin() {
-                    <?php if(strlen($chapid) < 1) echo "return true;\n"; ?>
-    		document.sendin.username.value = document.login.username.value;
-    		document.sendin.password.value = hexMD5('<?php echo $chapid; ?>' + document.login.password.value + '<?php echo $chapchallenge; ?>');
-    		document.sendin.submit();
+                <?php if(strlen($chapid) < 1) echo "return true;\n"; ?>
+    		    document.sendin.username.value = document.login.username.value;
+    		    document.sendin.password.value = hexMD5('<?php echo $chapid; ?>' + document.login.password.value + '<?php echo $chapchallenge; ?>');
+    		    document.sendin.submit();
     		return false;
     	    }
     	//-->
@@ -47,43 +47,32 @@
     <div class="container">
          <div class="conteudo">
              <div class="row">
-               <form name="login" action="<?php echo $linkloginonly; ?>" method="post" onSubmit="return doLogin()" >
-                    <input type="hidden" name="dst" value="<?php echo $linkorig; ?>" />
-        			<input type="hidden" name="popup" value="true" />
-                 <div class="row">
-                   <div class="input-field col s12">
-                     <input id="username" placeholder="CPF" name="username" type="text" class="input-field">
-                     <label for="username"></label>
-                   </div>
-                 </div>
-                 <div class="row">
-                   <div class="input-field col s12">
-                     <input id="password" placeholder="Room" name="password" type="text" class="">
-                     <label for="password"></label>
-                   </div>
-                 </div>
-                 <input type="submit" class="waves-effect waves-light btn" value="Login"></input>
-                 <a href="singin.php"> <button type="button"  class="waves-effect waves-light btn btn1" value="Singin">Singup</button></a>
-                 <a href="#"> <button type="button"  class="waves-effect waves-light btn btn2" value="Singin">Login with token</button></a>
-               </form>
-<!--
-           <form name="login" action="<?php echo $linkloginonly; ?>" method="post" onSubmit="return doLogin()" >
-			<input type="hidden" name="dst" value="<?php echo $linkorig; ?>" />
-			<input type="hidden" name="popup" value="true" />
 
-			<table width="100" style="background-color: #ffffff">
-				<tr><td align="right">login</td>
-				<td><input style="width: 80px" name="username" type="text" value="<?php echo $username; ?>"/></td>
-				</tr>
-				<tr><td align="right">password</td>
-				<td><input style="width: 80px" name="password" type="password"/></td>
-				</tr>
-				<tr><td> </td>
-				<td><input type="submit" value="OK" /></td>
-				</tr>
-			</table>
-		</form>
--->
+               <img id="logo" src="img/h10.png" alt="Hotel 10">
+
+               <form name="login" action="<?php echo $linkloginonly; ?>" method="post" onSubmit="return doLogin()" >
+    			<input type="hidden" name="dst" value="<?php echo $linkorig; ?>" />
+    			<input type="hidden" name="popup" value="true" />
+
+                <div class="form">
+    			<table width="100" style="background-color: #ffffff">
+    				<tr><td align="right"></td>
+    				<td><input style="width: 200px" name="username" placeholder="Documento / ID number" type="text" value=""/></td>
+    				</tr>
+    				<tr><td align="right"></td>
+    				<td><input style="width: 200px" placeholder="Apartamento / Room number" name="password" type="password"/></td>
+    				</tr>
+    				<tr><td> </td>
+    				<td><input id="submit" style="width: 211px;" type="submit" value="ACESSAR | ACCESS" /></td>
+    				</tr>
+    			</table>
+                </div>
+                <div class="terms">
+                    <h6>Read the contract here &nbsp<a href="#"> Terms of services</a> </h6>
+                    <h6>Leia o contrato aqui &nbsp<a href="#"> Termos de serviços</a> </h6>
+                </div>
+    		</form>
+        </div>
         <script type="text/javascript">
 
     	    function doLogin() {
@@ -94,17 +83,9 @@
         		return false;
     	    }
     	</script>
-           </div>
-         </div>
-         <div class="foot">
-             <div class="left">
-                 <h6>Conecta soluções</h6>
-             </div>
-             <div class="rigth">
-                 <h6>Radius technology</h6>
-             </div>
-             <div class="both"></div>
-         </div>
+    </div>
+</div> <!-- Conteudo -->
+
     </div>
   </body>
 
