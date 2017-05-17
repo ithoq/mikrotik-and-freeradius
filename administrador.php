@@ -21,6 +21,7 @@
             <html>
               <head>
                 <meta charset="utf-8">
+                <link rel="stylesheet" href="css/administrador.css">
                 <title>Pagina de administração</title>
                 <style media="screen">
                     td{
@@ -31,11 +32,11 @@
               <body>
                   <h1>Pagina de administração</h1>
                   <a href="singin.php"> <button type="button" name="button">Cadastrar usuario</button> </a>
-                  <section>
+                  <section id="date">
                       <h2>Conexões por data</h2>
                       <form class="" action="buscas/connDateUser.php" method="post" target="_blank">
-                          <input id="dataInicial" type="text" name="dataInicial" value="" placeholder="0000/00/00">
-                          <input id="dataFinal" type="text" name="dataFinal" value="" placeholder="0000/00/00">
+                          <input id="dataInicial" type="text" name="dataInicial" value="" placeholder="0000-00-00">
+                          <input id="dataFinal" type="text" name="dataFinal" value="" placeholder="0000-00-00">
                          <button type="submit" name="button">Mostrar</button>
                       </form>
                   </section>

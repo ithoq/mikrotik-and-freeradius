@@ -33,15 +33,13 @@
 
     	<script type="text/javascript" src="md5.js"></script>
     	<script type="text/javascript">
-    	<!--
     	    function doLogin() {
                 <?php if(strlen($chapid) < 1) echo "return true;\n"; ?>
     		    document.sendin.username.value = document.login.username.value;
     		    document.sendin.password.value = hexMD5('<?php echo $chapid; ?>' + document.login.password.value + '<?php echo $chapchallenge; ?>');
     		    document.sendin.submit();
-    		return false;
+    		    return false;
     	    }
-    	//-->
     	</script>
     <!-- $(endif) -->
     <div class="container">
@@ -63,7 +61,7 @@
     				<td><input style="width: 200px" placeholder="Apartamento / Room number" name="password" type="password"/></td>
     				</tr>
     				<tr><td> </td>
-    				<td><input id="submit" style="width: 211px;" type="submit" value="ACESSAR | ACCESS" /></td>
+    				<td><input id="submit" style="width: 218px;" type="submit" value="ACESSAR | ACCESS" /></td>
     				</tr>
     			</table>
                 </div>

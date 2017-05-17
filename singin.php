@@ -9,9 +9,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <!-- <link rel="stylesheet" href="css/singin.css">
-        <link rel="stylesheet" href="css/materialize.css">
-    -->
+        <link rel="stylesheet" href="css/singin.css.css">
         <meta name="viewport" content="width=device-width, user-scalable=no">
         <title>Cadastro de clientes</title>
         <script type="text/javascript">
@@ -30,6 +28,9 @@
     <body>
     <div class="container">
          <div class="conteudo">
+             <div class="top">
+                 
+             </div>
              <div class="row">
                <form class="col s12" action="php/singup.php" method="post">
                  <div class="row">
@@ -58,17 +59,9 @@
                  </div>
                  <input type="submit"  class="waves-effect waves-light btn btn1" value="Singin"></input>
                </form>
-
            </div>
          </div>
          <div class="foot">
-             <div class="left">
-                 <h6>Conecta soluções</h6>
-             </div>
-             <div class="rigth">
-                 <h6>Radius technology</h6>
-             </div>
-             <div class="both"></div>
          </div>
     </div>
   </body>
