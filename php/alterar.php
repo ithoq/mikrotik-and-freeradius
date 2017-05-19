@@ -1,7 +1,7 @@
 <?php
 
     function __autoload($class_name){
-        require_once 'php/'.$class_name.'.php';
+        require_once $class_name.'.php';
     }
 
     $cpf = $_POST['cpf'];

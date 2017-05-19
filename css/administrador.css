@@ -1,6 +1,10 @@
 body{
     border: 0;
     margin: 0;
+    font-family: Impact, Charcoal, sans-serif;
+}
+a{
+    text-decoration: none;
 }
 ul{
     text-decoration: none;
@@ -13,11 +17,45 @@ li{
     height: 100%;
 }
 #float-left{
+    background-color: #303030;
+}
+#top-dash h1, h2{
+    color: #fff;
+    text-align: center;
+    font-weight: 100;
+}
+#logo{
+    position: relative;
+    width: 95px;
+    height: 95px;
+    left: 40%;
+    background-color: #fff;
+    border-radius: 3em;
+}
+#menu-dash{
+    padding: 0;
+    margin: 0;
+}
+#menu-dash ul li{
+    list-style: none;
+    background-color: #3761F9;
+    margin-top: 1%;
+    padding: 3%;
+    margin-top: 3s%;
+    text-align: center;
+    color: #FFF;
+}
+#menu-dash ul li:hover{
+    background-color:  #0D8AF2;
+}
+ul{
+    padding:0;
+}
+#float-left{
     position: absolute;
     width: 30%;
     height: 100%;
     float: left;
-    border: solid #ddd;
 }
 #float-rigth{
     position: absolute;
@@ -26,22 +64,166 @@ li{
     height: 100%;
     margin-left: 30%;
 }
+#up{
+    text-align: center;
+    color: #0D8AF2;
+}
+    #up h1{
+        font-weight: 100;
+        font-size: 1.7em;
+    }
+    #up h3{
+        font-weight: 200;
+    }
+#down{
+    text-align: center;
+    color: red;
+}
+    #down h1{
+        font-weight: 100;
+        font-size: 1.7em;
+    }
+    #down h3{
+        font-weight: 200;
+    }
 #top-grap{
     width: 100%;
-    height: 50%;
+    height: 40%;
 }
     #grap-left{
         position: relative;
         width: 40%;
         height: 100%;
-        background-color: #ccc;
-        
+        float: left;
+        margin: 0 0 0 8%;
+    }
+    #grap-rigth{
+        position: relative;
+        width: 40%;
+        height: 100%;
+        float: right;
+        margin: 0 8% 0 0;
     }
     #piechart_3d{
         position: relative;
+        margin-top: 4%;
     }
 #semi-bottom-grap{
-    width: 100%;
-    height: 50%;
-    border: solid #ccc 1px;
+    width: 99%;
+    height: 60%;
+    margin: 0 0 0 0.5%
+}
+.line-hori{
+    position: relative;
+    width: 70%;
+    height: 1.3px;
+    background-color: #ccc;
+    left: 15%;
+}
+#cadastro{
+    visibility: hidden;
+    position: absolute;
+    border-bottom: solid #ddd 1px;
+    width: 40%;
+    height: 40%;
+    left: 30%;
+    margin-top: 1%;
+    float: left;
+}
+#cadastro h1{
+    margin-left: 0;
+}
+#cadastro form input{
+    display: block;
+    margin: 1% 0 0 0;
+    padding: 2%;
+}
+#cadastro form button{
+    position: relative;
+    padding: 2%;
+    margin: 1% 0 0 0;
+    color: #FFF;
+    border: none;
+    background-color: #0D8AF2;
+}
+#remover{
+    visibility: hidden;
+    position: absolute;
+    border-bottom: solid #ddd 1px;
+    width: 30%;
+    height: 20%;
+    left: 30%;
+    margin-top: 1%;
+    float: left;
+}
+#remover form input{
+    padding: 2%;
+}
+#remover form button{
+    margin-top: 1%;
+    padding: 2%;
+    border: none;
+    color: #FFF;
+    background-color: #0D8AF2;
+}
+#atualizar{
+    visibility: hidden;
+    position: absolute;
+    border-bottom: solid #ddd 1px;
+    width: 30%;
+    height: 20%;
+    left: 30%;
+    margin-top: 1%;
+    float: left;
+}
+#atualizar form input{
+    padding: 2%;
+}
+#atualizar form button{
+    margin-top: 1%;
+    padding: 2%;
+    border: none;
+    color: #FFF;
+    background-color: #0D8AF2;
+}
+#listar{
+    visibility: hidden;
+    position: absolute;
+    border-bottom: solid #ddd 1px;
+    width: 40%;
+    height: 41%;
+    left: 30%;
+    margin-top: 1%;
+    float: left;
+}
+#listar form input{
+    display: block;
+    padding: 2%;
+    margin: 1% 0 0 0;
+}
+#listar form button{
+    margin-top: 1%;
+    padding: 2%;
+    border: none;
+    color: #FFF;
+    background-color: #0D8AF2;
+    margin: 1% 0 0 0;
+}
+#busca{
+    visibility: hidden;
+    position: absolute;
+    width: 50%;
+    height: 35%;
+    border-bottom: solid #ccc 1px;
+    left: 25%;
+}
+#busca form input{
+    padding: 2%;
+}
+button{
+    margin-top: 1%;
+    padding: 2%;
+    border: none;
+    color: #FFF;
+    background-color: #0D8AF2;
 }

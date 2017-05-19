@@ -14,7 +14,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Lista de usuarios</title>
+        <title>Usuario</title>
         <style media="screen">
             td{
                 display: block;
@@ -22,7 +22,7 @@
         </style>
     </head>
     <body>
-        <h1>Lista de usuarios</h1>
+        <h1>Usuario encontrado</h1>
         <table>
             <tr>
                 <td>
