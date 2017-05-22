@@ -46,6 +46,15 @@
             $stm->execute();
             return $stm->fetch();
         }
+
+        public function findRoom($value){
+
+            $sql = "SELECT * FROM $this->table WHERE value = :value";
+            $stm = Conn::prepare($sql);
+            $stm->bindParam(":value", $value);
+            $stm->execute();
+            return $stm->fetch();
+        }
     }
 
 ?>

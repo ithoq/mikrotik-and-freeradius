@@ -4,11 +4,20 @@
         require_once '../php/'.$class_name.'.php';
     }
 
-    $cpf = $_POST['cpf'];
+    $array = array();
 
-    $searchCpf = new Radcheck();
+    if(empty($_POST['cpf']) && empty($_POST['rom']) ):
+    elseif(!empty($_POST['cpf']) && !empty($_POST['room'])):
+        $searchCpf = new Radcheck();
+        $room = $_POST['room'];
+        $array = $searchCpf->findRoom($room);
+    elseif(empty($_POST['room']) && !empty($_POST['cpf'])):
+        $searchCpf = new Radcheck();
+        $cpf = $_POST['cpf'];
+        $array = $searchCpf->findCPF($cpf);
+    endif;
 
-    $array = $searchCpf->findCPF($cpf);
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -27,7 +36,7 @@
             <tr>
                 <td>
                     <?php echo "<b>Id:</b> ".$array['id'] ?>
-                    <?php echo "<b>Nome:</b> ".$array['username']?>
+                    <?php echo "<b>CPF:</b> ".$array['username']?>
                     <?php echo "<b>Quarto:</b> ".$array['value'] ?>
                     <?php echo "<b>Data nascimento:</b> ".$array['dataNascimento'] ?>
                 </td>

@@ -1,10 +1,40 @@
+<?php
+
+    function __autoload($class_name){
+        require_once 'php/'.$class_name.'.php';
+    }
+
+    $rad = new Radacct();
+
+    $array = $rad->ativos();
+    $inativos = $rad->inativos();
+?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <title>Dashboard</title>
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript" src="js/chart.js"></script>
+        <script type="text/javascript">
+
+        google.charts.load("current", {packages:["corechart"]});
+              google.charts.setOnLoadCallback(drawChart);
+              function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                  ['Task', 'Hours per Day'],
+                  ['Ativos',     <?=count($array)?>],
+                  ['Inativos',      <?=count($inativos)?>]
+                ]);
+
+                var options = {
+                  title: 'Clientes',
+                  is3D: true,
+                };
+
+                var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+                chart.draw(data, options);
+              }
+        </script>
         <link rel="stylesheet" href="css/administrador.css">
     </head>
     <body>
@@ -19,12 +49,11 @@
                 </div>
                 <div id="menu-dash">
                     <ul>
-                        <a href="#"><li id="home">Home</li></a>
-                        <a href="#"><li id="cad">Cadastro</li></a>
-                        <a href="#"><li id="rem">Remover</li></a>
-                        <a href="#"><li id="atu">Atualizar</li></a>
-                        <a href="#"><li id="lis">Visualizar</li></a>
-                        <a href="#"><li id="bus">Buscas</li></a>
+                        <li id="home">Home</li>
+                        <li id="cad">Cadastro</li>
+                        <li id="rem">Remover</li>
+                        <li id="atu">Atualizar</li>
+                        <li id="bus">Buscas</li>
                     </ul>
                 </div>
                 <div id="bottom">
@@ -79,29 +108,19 @@
                                 <button type="submit" name="button">Atualizar</button>
                             </form>
                         </div>
-                        <div id="listar" class="">
-                            <h1>Listar cliente</h1>
-
-                            <form class="" action="buscas/SearchCPF.php" method="post" target="_blank">
-                                <input id="id" type="text" name="id" placeholder="ID" value="">
-                                <input id="cpf" type="text" name="cpf" placeholder="CPF" value="">
-                                <input id="room" type="text" name="room" placeholder="ROOM" value="">
-                                <button type="submit" name="button">procurar</button>
-                            </form>
-                        </div>
                         <div id="busca" class="">
                             <h1>Busca por data</h1>
 
-                            <form class="" action="#" method="post">
-                                <input id="dataIni" type="date" name="" value="">
-                                <input id="dataFin" type="date" name="" value="">
+                            <form class="" action="buscas/connDateUser.php" method="post" target="_blank">
+                                <input id="dataIni" type="date" name="dataIni" value="">
+                                <input id="dataFin" type="date" name="dataFin" value="">
                                 <button type="submit" name="button">buscar</button>
                             </form>
 
                             <h1>Busca por cliente</h1>
 
                             <form class="" action="buscas/SearchCPF.php" method="post" target="_blank">
-                                <input id="cpf" type="text" name="cpf" placeholder="CPF" value="">
+                                <input id="cpf" type="text" name="cpf" placeholder="CPF" value>
                                 <button type="submit" name="button">procurar</button>
                             </form>
                         </div>
@@ -115,14 +134,12 @@
             document.getElementById('cad').onclick = function(){cad()};
             document.getElementById('rem').onclick = function(){rem()};
             document.getElementById('atu').onclick = function(){atu()};
-            document.getElementById('lis').onclick = function(){lis()};
             document.getElementById('bus').onclick = function(){bus()};
 
             function home() {
                 document.getElementById('cadastro').style.visibility = 'hidden';
                 document.getElementById('remover').style.visibility = 'hidden';
                 document.getElementById('atualizar').style.visibility = 'hidden';
-                document.getElementById('listar').style.visibility = 'hidden';
                 document.getElementById('busca').style.visibility = 'hidden';
             }
 
@@ -130,7 +147,6 @@
                 document.getElementById('cadastro').style.visibility = 'visible';
                 document.getElementById('remover').style.visibility = 'hidden';
                 document.getElementById('atualizar').style.visibility = 'hidden';
-                document.getElementById('listar').style.visibility = 'hidden';
                 document.getElementById('busca').style.visibility = 'hidden';
             }
 
@@ -138,7 +154,6 @@
                 document.getElementById('cadastro').style.visibility = 'hidden';
                 document.getElementById('remover').style.visibility = 'visible';
                 document.getElementById('atualizar').style.visibility = 'hidden';
-                document.getElementById('listar').style.visibility = 'hidden';
                 document.getElementById('busca').style.visibility = 'hidden';
             }
 
@@ -146,15 +161,6 @@
                 document.getElementById('cadastro').style.visibility = 'hidden';
                 document.getElementById('remover').style.visibility = 'hidden';
                 document.getElementById('atualizar').style.visibility = 'visible';
-                document.getElementById('listar').style.visibility = 'hidden';
-                document.getElementById('busca').style.visibility = 'hidden';
-            }
-
-            function lis() {
-                document.getElementById('cadastro').style.visibility = 'hidden';
-                document.getElementById('remover').style.visibility = 'hidden';
-                document.getElementById('atualizar').style.visibility = 'hidden';
-                document.getElementById('listar').style.visibility = 'visible';
                 document.getElementById('busca').style.visibility = 'hidden';
             }
 
@@ -162,7 +168,6 @@
                 document.getElementById('cadastro').style.visibility = 'hidden';
                 document.getElementById('remover').style.visibility = 'hidden';
                 document.getElementById('atualizar').style.visibility = 'hidden';
-                document.getElementById('listar').style.visibility = 'hidden';
                 document.getElementById('busca').style.visibility = 'visible';
             }
 

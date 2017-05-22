@@ -4,12 +4,12 @@
         require_once '../php/'.$class_name.'.php';
     }
 
-    $dateInit = $_POST['dataInicial'];
-    $dateFinal = $_POST['dataFinal'];
+    $dataIni = $_POST['dataIni'];
+    $dataFin = $_POST['dataFin'];
 
     $radacc = new Radacct();
 
-    $array = $radacc->findDateRange($dateInit,$dateFinal);
+    $array = $radacc->findDateRange($dataIni,$dataFin);
 ?>
 <!DOCTYPE html>
 <html>
@@ -17,25 +17,43 @@
         <meta charset="utf-8">
         <title>Lista de usuarios</title>
         <style media="screen">
-            td{
-                display: block;
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            }
+
+            td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            }
+
+            tr:nth-child(even) {
+            background-color: #dddddd;
             }
         </style>
     </head>
     <body>
         <h1>Lista de usuarios</h1>
+
         <table>
-            <?php foreach ($array as $key => $value) { ?>
-            <tr>
-                <td>
-                    <?php echo "<b>Id:</b> ".$value['radacctid'] ?>
-                    <?php echo "<b>Nome:</b> ".$value['username']?>
-                    <?php echo "<b>IP:</b> ".$value['nasipaddress'] ?>
-                    <?php echo "<b>Horario inicial:</b> ".$value['acctstarttime'] ?>
-                    <?php echo  "<b>Horario Final :</b>".$value['acctstoptime'] ?>
-                </td>
-                <?php } ?>
-            </tr>
+          <tr>
+            <th>ID</th>
+            <th>CPF</th>
+            <th>IP INTERNO</th>
+            <th>INICIO SESSÃO</th>
+            <th>FIM SESSÃO</th>
+          </tr>
+          <tr>
+              <?php foreach ($array as $key => $value) { ?>
+            <td><?php echo $value['radacctid'] ?></td>
+            <td><?php echo $value['username']?></td>
+            <td><?php echo $value['nasipaddress'] ?></td>
+            <td><?php echo $value['acctstarttime'] ?></td>
+            <td><?php echo $value['acctstoptime'] ?></td>
+          </tr>
+              <?php } ?>
         </table>
     </body>
 </html>
