@@ -8,6 +8,9 @@
 
     $array = $rad->ativos();
     $inativos = $rad->inativos();
+
+    $mediaDownload = $rad->mediaDownload();
+    $mediaUpload = $rad->mediaUpload();
 ?>
 <!DOCTYPE html>
 <html>
@@ -68,12 +71,12 @@
                         <div class="line-vert"></div>
                         <div id="grap-rigth">
                             <div id="up">
-                                <h1>Taxa Upload</h1>
-                                <h3>20000Kbps</h3>
+                                <h1>Upload</h1>
+                                <h3><?php echo sprintf("%3.3f", $mediaUpload)." MB" ?></h3>
                             </div>
                             <div id="down">
-                                <h1>Taxa Download</h1>
-                                <h3>1000Kbs</h3>
+                                <h1>Download</h1>
+                                <h3><?php echo sprintf("%3.3f", $mediaDownload)." MB" ?></h3>
                             </div>
                         </div>
                     </div>

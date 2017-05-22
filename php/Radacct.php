@@ -36,6 +36,46 @@
             $stm->execute();
             return $stm->fetchAll();
         }
+
+        public function mediaDownload(){
+
+            $sql = "SELECT acctinputoctets FROM $this->table";
+
+            $stm = Conn::prepare($sql);
+            $stm->execute();
+            $down = $stm->fetchAll();
+
+            $qtdTotal = 0;
+
+            foreach ($down as $key => $value) {
+                $qtdTotal += $value['acctinputoctets'];
+            }
+
+            $total = $qtdTotal/count($down);
+            $a = $total/1024;
+            return $a/1024;
+
+        }
+
+        public function mediaUpload(){
+
+            $sql = "SELECT acctoutputoctets FROM $this->table";
+
+            $stm = Conn::prepare($sql);
+            $stm->execute();
+            $down = $stm->fetchAll();
+
+            $qtdTotal = 0;
+
+            foreach ($down as $key => $value) {
+                $qtdTotal += $value['acctoutputoctets'];
+            }
+
+            $total = $qtdTotal/count($down);
+            $a = $total/1024;
+            return $a/1024;
+
+        }
     }
 
 ?>
