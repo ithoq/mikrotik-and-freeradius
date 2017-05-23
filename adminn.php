@@ -53,6 +53,7 @@
               }
         </script>
         <link rel="stylesheet" href="css/administrador.css">
+        <link rel="shortcut icon" href="http://www.isq.pt/wp-content/uploads/sites/78/2016/10/Inspecoes-Tecnicas-Entypo_e73e359_256.png">
     </head>
     <body>
         <div class="content">
@@ -60,7 +61,7 @@
                 <div id="top-dash">
                     <h1>Dashboard</h1>
                     <div id="logo">
-                        
+
                     </div>
                     <h2>Client name</h2>
                 </div>
@@ -71,9 +72,11 @@
                         <li id="rem">Remover</li>
                         <li id="atu">Atualizar</li>
                         <li id="bus">Buscas</li>
+                        <a href="php/session.php"><li id="sair">Sair</li></a>
                     </ul>
                 </div>
                 <div id="bottom">
+                    <h4>Powerby <a href="http://conectagoias.com.br" target="_blank"> Conecta Tecnologia</a></h4>
                 </div>
             </section>
             <section>
