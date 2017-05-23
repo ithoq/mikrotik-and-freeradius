@@ -1,7 +1,7 @@
 <?php
 
     function __autoload($class_name){
-        require_once 'php/'.$class_name.'.php';
+        require_once $class_name.'.php';
     }
 
     $id = $_POST['id'];
@@ -11,13 +11,7 @@
 
     if($radcheck->delete($id)){
         echo "Usuario: ".$usuario. " deletado com sucesso!";
-        ?>
-            <a href="administrador.php">Voltar</a>
-        <?php
     }else{
         echo "Não foi possivel deletar";
-        ?>
-            <a href="teste.php">Voltar</a>
-        <?php
     }
 ?>

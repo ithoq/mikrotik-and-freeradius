@@ -18,6 +18,16 @@
              return $stm->fetchAll();
         }
 
+        public function complement($cpf){
+
+            $sql = "SELECT * FROM radacct WHERE username = :username";
+
+             $stm = Conn::prepare($sql);
+             $stm->bindParam(":username", $cpf);
+             $stm->execute();
+             return $stm->fetch();
+        }
+
         public function ativos(){
 
             $sql = "SELECT username, date_format(acctstarttime, '%d/%m/%Y %T')
@@ -74,7 +84,6 @@
             $total = $qtdTotal/count($down);
             $a = $total/1024;
             return $a/1024;
-
         }
     }
 

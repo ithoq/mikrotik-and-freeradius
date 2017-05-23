@@ -4,13 +4,27 @@
         require_once 'php/'.$class_name.'.php';
     }
 
-    $rad = new Radacct();
+    if(empty($_POST['user']) && empty($_POST['pass'])):
+    else:
+        $user = $_POST['user'];
+        $pass = $_POST['pass'];
+        $login = new LoginAdmin();
 
-    $array = $rad->ativos();
-    $inativos = $rad->inativos();
+        if($login->login($user,$pass)):
+            session_start();
+            $_SESSION['user'] = "$user";
+            $_SESSION['pass'] = "$pass";
 
-    $mediaDownload = $rad->mediaDownload();
-    $mediaUpload = $rad->mediaUpload();
+            $radchek = new Radcheck();
+            $rad = new Radacct();
+
+            $array = $rad->ativos();
+            $inativos = $rad->inativos();
+
+            $mediaDownload = $rad->mediaDownload();
+            $mediaUpload = $rad->mediaUpload();
+            // SE ESTIVER LOGADO MOSTRA A PAGINA DE ADM SE NAO SÓ EXIBE UMA MENSAGEM;
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -46,7 +60,7 @@
                 <div id="top-dash">
                     <h1>Dashboard</h1>
                     <div id="logo">
-
+                        
                     </div>
                     <h2>Client name</h2>
                 </div>
@@ -96,8 +110,8 @@
                         <div id="remover" class="">
                             <h1>Remover cliente</h1>
 
-                            <form class="" action="php/remover.php" method="post">
-                                <input id="cpf" type="text" name="cpf" placeholder="CPF" value="">
+                            <form class="" action="php/remover.php" method="post" target="_blank">
+                                <input id="id" type="text" name="id" placeholder="CPF" value="">
                                 <br>
                                 <button type="submit" name="button">remover</button>
                             </form>
@@ -177,3 +191,11 @@
         </script>
     </body>
 </html>
+<?
+else:
+echo "Administrador não cadastrado!";
+endif;
+
+endif;
+
+?>

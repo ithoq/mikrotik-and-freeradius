@@ -32,6 +32,7 @@
     <head>
         <meta charset="utf-8">
         <title>Alterar cadastro</title>
+        <link rel="stylesheet" href="../css/alterar.css">
     </head>
     <body>
         <h2>Alterar cadastro</h2>
